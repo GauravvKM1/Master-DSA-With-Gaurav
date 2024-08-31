@@ -1,0 +1,28 @@
+
+class Solution {
+  public:
+    Node* divide(Node* head) {
+        // code here
+        Node* temp=head;
+        
+        Node* even=new Node(0);
+        Node* anskaHead=even;
+        
+        Node* odd=new Node(0);
+        Node* oddKaHead=odd;
+        while(temp!=NULL){
+            if(temp->data%2==0){
+                even->next=new Node(temp->data);
+                even=even->next;
+            }
+            else{
+                odd->next=new Node(temp->data);
+                odd=odd->next;
+            }
+            temp=temp->next;
+        }
+        even->next=oddKaHead->next;
+        return anskaHead->next;
+    }
+};
+
