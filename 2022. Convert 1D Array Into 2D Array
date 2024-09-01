@@ -1,1 +1,42 @@
+class Solution {
+public:
+    vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
+    
+     vector<vector<int>> ans(m, vector<int>(n));  
 
+      if(m*n!=original.size())return {};
+      int idx=0;
+     
+      for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+           ans[i][j]=original[idx];
+            idx++;
+        }
+      }  
+      return ans;
+    }
+};
+
+
+
+O(n) space sol
+
+class Solution {
+public:
+    vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
+    
+      vector<vector<int>>ans;
+      if(m*n!=original.size())return ans;
+      int idx=0;
+     
+      for(int i=0;i<m;i++){
+         vector<int>inner;
+        for(int j=0;j<n;j++){
+          inner.push_back(original[idx]);
+          idx++;
+        }
+        ans.push_back(inner);
+      }  
+      return ans;
+    }
+};
