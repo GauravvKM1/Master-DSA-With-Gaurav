@@ -12,3 +12,23 @@ class Solution {
         return false;
     }
 };
+
+
+
+////2nd way using map
+
+
+class Solution {
+  public:
+    // Function to check if the linked list has a loop.
+    bool detectLoop(Node* head) {
+        // your code here
+        unordered_map<Node*,bool>mp;
+        while(head!=NULL){
+            mp[head]=true;
+            head=head->next;
+            if(mp.find(head)!=mp.end())return true;
+        }
+        return false;
+    }
+};
