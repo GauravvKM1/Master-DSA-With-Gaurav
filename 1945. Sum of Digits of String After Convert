@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int getLucky(string s, int k) {
+        int ans = 0;
+        
+        // Convert the string to its numerical value
+        for(int i = 0; i < s.size(); i++) {
+            int charValue = s[i] - 'a' + 1;
+            while (charValue > 0) {
+                ans += charValue % 10;
+                charValue /= 10;
+            }
+        }
+        
+        // Apply the transformation k-1 times
+        k--;
+        while (k > 0) {
+            int sumDigits = 0;
+            while (ans > 0) {
+                sumDigits += ans % 10;
+                ans /= 10;
+            }
+            ans = sumDigits;
+            k--;
+        }
+        
+        return ans;
+    }
+};
