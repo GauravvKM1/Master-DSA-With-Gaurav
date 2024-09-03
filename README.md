@@ -5,7 +5,7 @@
   <h1 style="font-size: 3em; letter-spacing: 1px;">Master-DSA-With-Gaurav</h1>
 </div>
 
-<div style="max-width: 800px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<div style="max-width: 800px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> 
   <h2 style="color: #65c9b8; font-size: 2em; border-bottom: 2px solid #65c9b8; padding-bottom: 10px;">Welcome to the Master-DSA-With-Gaurav Project!</h2>
   <p style="font-size: 1.2em; line-height: 1.6; margin: 15px 0;">Here, I share all the notes and codes for various problems from Leetcode, GeeksforGeeks, CodeChef, and much more.</p>
   <p style="font-size: 1.2em; line-height: 1.6; margin: 15px 0;">Dive deep into the concepts of different data structures, enhance your problem-solving skills, and ace your coding interviews.</p>
