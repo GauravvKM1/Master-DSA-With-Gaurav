@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int getLucky(string s, int k) {
+    int getLucky(string s, int k) { 
         int ans = 0;
         
         // Convert the string to its numerical value
