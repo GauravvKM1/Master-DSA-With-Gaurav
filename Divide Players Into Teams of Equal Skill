@@ -1,0 +1,32 @@
+class Solution {
+public:
+    long long dividePlayers(vector<int>& skill) {
+        
+       int n=skill.size();
+       sort(skill.begin(),skill.end());
+       int i=0,j=n-1;
+       vector<pair<int,int>>v;
+       while(i<j){
+        v.push_back({skill[i],skill[j]});
+        i++,j--;
+       }
+
+
+       if(v.size()==1){
+        return v[0].first*v[0].second;
+       }
+
+       int ans=v[0].first+v[0].second,ans1;
+       for(int i=1;i<v.size();i++){
+           ans1=v[i].first+v[i].second;
+           if(ans!=ans1)return -1;
+           ans=ans1;
+       }
+
+       long long finalans=0;
+       for(int i=0;i<v.size();i++){
+        finalans+=v[i].first*v[i].second;
+       }
+       return finalans;
+    }
+};
