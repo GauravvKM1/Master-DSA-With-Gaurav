@@ -10,7 +10,7 @@
   <p style="font-size: 1.2em; line-height: 1.6; margin: 15px 0;">Here, I share all the notes and codes for various problems from Leetcode, GeeksforGeeks, CodeChef, and much more.</p>
   <p style="font-size: 1.2em; line-height: 1.6; margin: 15px 0;">Dive deep into the concepts of different data structures, enhance your problem-solving skills, and ace your coding interviews.</p>
   <div align="center" style="margin: 30px 0;">
-    <a href="#" style="text-decoration: none; background-color: #ff6f61; color: white; padding: 15px 25px; border-radius: 5px; font-size: 1.2em; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); transition: background-color 0.3s;">Explore Now</a>
+    <a href="https://github.com/GauravvKM1/Master-DSA-With-Gaurav" style="text-decoration: none; background-color: #ff6f61; color: white; padding: 15px 25px; border-radius: 5px; font-size: 1.2em; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); transition: background-color 0.3s;">Explore Now</a>
   </div>
 </div>
 
