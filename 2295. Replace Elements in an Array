@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> arrayChange(vector<int>& nums, vector<vector<int>>& operations) {
+        int n = nums.size(), m = operations.size();
+        unordered_map<int, int> mp;
+
+        // Create a map of value -> index
+        for (int i = 0; i < n; i++) {
+            mp[nums[i]] = i;
+        }
+         int elem1=0,elem2=0;
+        // Process each operation
+        for (int i = 0; i < m; i++) {
+             elem1 = operations[i][0];
+             elem2 = operations[i][1];
+
+            // Update nums and the map
+            int index = mp[elem1];
+            nums[index] = elem2;
+            mp[elem2] = index;
+
+            // Remove the old mapping
+            mp.erase(elem1);
+        }
+
+        return nums;
+    }
+};
