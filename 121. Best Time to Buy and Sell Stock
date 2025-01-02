@@ -1,0 +1,40 @@
+//Tle//
+
+class Solution {
+public:
+    int maxProfit(vector<int>& arr) {
+        int n=arr.size();
+        int maxi=INT_MIN;
+        int ans=0;
+        for(int i=0;i<n;i++){
+             maxi=arr[i];
+            for(int j=i;j<n;j++){
+              if(arr[j]>maxi){
+                maxi=arr[j];
+              }
+            }
+            ans=max(ans,maxi-arr[i]);
+        }
+        return ans;
+    }
+};
+
+
+//optimal using min and max price
+class Solution {
+public:
+    int maxProfit(vector<int>& arr) {
+        int n = arr.size();
+        if (n <= 1) return 0; // No profit possible
+        
+        int minPrice = arr[0]; // Initialize with the first element
+        int maxProfit = 0;
+        
+        for (int i = 1; i < n; i++) {
+            // Update maxProfit if selling at arr[i] gives better profit
+           maxProfit=max(maxProfit,arr[i]-minPrice);
+           minPrice=min(minPrice,arr[i]);
+        }
+        return maxProfit;
+    }
+};
