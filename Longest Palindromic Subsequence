@@ -1,0 +1,38 @@
+class Solution {
+public:
+    // int LCS(string s1,string s2,int i,int j){
+    //   if(i>=s1.size()  || j>=s2.size())return 0;
+      
+    //   int ans=0;
+    //   if(s1[i]==s2[j]){
+    //     ans= 1+LCS(s1,s2,i+1,j+1);
+    //   }
+    //   else{
+    //     ans= max(LCS(s1,s2,i+1,j),LCS(s1,s2,i,j+1));
+    //   }
+    //   return ans;
+    // }
+
+    int LCS(string &s1,string &s2,int i,int j,vector<vector<int>>&dp){
+      if(i>=s1.size()  || j>=s2.size())return 0;
+      
+      if(dp[i][j]!=-1)return dp[i][j];
+      int ans=0;
+      if(s1[i]==s2[j]){
+        ans= 1+LCS(s1,s2,i+1,j+1,dp);
+      }
+      else{
+        ans= max(LCS(s1,s2,i+1,j,dp),LCS(s1,s2,i,j+1,dp));
+      }
+      dp[i][j]=ans;
+      return dp[i][j];
+    }
+    int longestPalindromeSubseq(string s) {
+       string rev=s;
+       reverse(rev.begin(),rev.end());
+       int n=s.size();
+       vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
+       int ans=LCS(s,rev,0,0,dp);
+       return ans; 
+    }
+};
