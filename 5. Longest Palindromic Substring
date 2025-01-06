@@ -29,3 +29,45 @@ public:
       return ans;
     }
 };
+
+
+
+
+
+with dp
+
+
+class Solution {
+public:
+   bool isPalindrome(string &s,int i,int j,vector<vector<int>>&dp){
+     if(i>=j){
+        return true;
+     }
+     if(dp[i][j]!=-1)return dp[i][j];
+      bool ans=false;
+     if(s[i]==s[j]){
+       ans= isPalindrome(s,i+1,j-1,dp);
+     }
+     else{
+        ans= false;
+     }
+     return dp[i][j]=ans;
+   }
+    string longestPalindrome(string s) {
+      int n=s.size();
+      string ans;
+      int len=0;
+      vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
+      for(int i=0;i<n;i++){
+        for(int j=i;j<n;j++){
+            if(isPalindrome(s,i,j,dp)){
+                len=max(len,j-i+1);
+                if(len<=j-i+1)
+                ans=s.substr(i,j-i+1);
+            }
+        }
+      }  
+      cout<<len;
+      return ans;
+    }
+};
